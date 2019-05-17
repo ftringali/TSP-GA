@@ -8,8 +8,8 @@ public class Calculator {
 	
 	public static void main(String[] args) {
 		double d = distance(new Point(0,0), new Point(1,1));
-		System.out.println("Risultato: "+d);
-		assert d == Math.sqrt(2) : "distance non funziona, il risultato corretto è " + Math.sqrt(2);
+		System.out.println("Result: "+d);
+		assert d == Math.sqrt(2) : "distance doesn't work, it should be " + Math.sqrt(2);
 	}
 
 	/**
@@ -19,7 +19,8 @@ public class Calculator {
 	 */
 	public static double distance(Point a, Point b) {
 		
-		// teorema che porta il nome di un noto matematico greco 
+		// teorema che porta il nome di un noto matematico greco
+		// famous theorem discovered by an ancient Greek mathematician
 		return Math.sqrt(
 				Math.pow(a.getX() - b.getX(), 2) + 
 				Math.pow(a.getY() - b.getY(), 2)
@@ -30,13 +31,12 @@ public class Calculator {
 	/**
 	 * @return a random solution
 	 */
-	public static Point[] createRandomSolution() {
+	public static Point[] createRandomSolution(final Point[] coordinates) {
 		
-		Point[] array = KroA100.coordinates;
 		List<Point> list = new ArrayList<Point>();
 		
-		for (int i = 0; i < array.length; i++) {
-			list.add(array[i]);
+		for (int i = 0; i < coordinates.length; i++) {
+			list.add(coordinates[i]);
 		} 
 
 		Point[] points = new Point[list.size()];

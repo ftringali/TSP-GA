@@ -3,15 +3,15 @@ package it.coderdojo.bracciano.ga;
 public class Solution {
 
 	private Point[] points;
-
+	double length = 0;
 
 	/**
 	 * Constructor
 	 * 
-	 * @param lenght
+	 * @param solutionLenght
 	 */
-	public Solution(int lenght) {
-		points = new Point[lenght];
+	public Solution(int solutionLenght) {
+		points = new Point[solutionLenght];
 	}
 	
 	/**
@@ -23,25 +23,36 @@ public class Solution {
 
 	/**
 	 * @param points the points to set
+	 * @throws Exception 
 	 */
-	public void setPoints(Point[] points) {
-		this.points = points;
+	public void setPoints(Point[] points) throws Exception {
+		if(this.points!=null && points!=null && points.length==this.points.length) {
+			for (int i = 0; i < points.length; i++) {
+				this.points[i] = points[i];
+			}
+			setLength();
+		} else {
+			throw new Exception("this.points or points are null, otherwise they have different length");
+		}
 	}	
 	
-	public double getLength() {
-		
-		double length = 0;
-		
-		//somma delle distanze tra il punto [i] e il punto [i+1]
-		for (int i = 0; i < points.length -1 ; i++) {
-			length = length + Calculator.distance(points[i], points[i+1]);
-		} 
-		
+	public double getLength() {	
 		return length;
 	}
 	
-	public void randomize() {
-		setPoints(Calculator.createRandomSolution());
+	private void setLength() {
+		
+		length = 0;
+		
+		//somma delle distanze tra il punto [i] e il punto [i+1]
+		//sum point by point distance
+		for (int i = 0; i < points.length -1 ; i++) {
+			length += Calculator.distance(points[i], points[i+1]);
+		} 
+	}
+	
+	public void randomize(final Point[] coordinates) throws Exception {
+		setPoints(Calculator.createRandomSolution(coordinates));
 	}
 
 	public String getListToString() {
