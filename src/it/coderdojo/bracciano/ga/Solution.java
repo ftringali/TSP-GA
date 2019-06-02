@@ -52,7 +52,8 @@ public class Solution {
 	}
 	
 	public void randomize(final Point[] coordinates) throws Exception {
-		setPoints(Calculator.createRandomSolution(coordinates));
+//		setPoints(Calculator.createRandomSolution(coordinates));
+		setPoints(Calculator.createRandomNearestNeighboursSolution(coordinates));
 	}
 
 	public String getListToString() {

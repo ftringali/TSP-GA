@@ -69,6 +69,9 @@ public class TspChart extends ApplicationFrame {
 			for (int j = 0; j < points.length; j++) {
 				series.add(points[j].getX(), points[j].getY());
 			}
+
+			// to close the path
+			series.add(points[0].getX(), points[0].getY());
 			
 		}
 	}

@@ -2,6 +2,7 @@ package it.coderdojo.bracciano.ga;
 
 public class Point {
 	
+	private int originalPosition;
 	private int x;
 	private int y;
 	
@@ -11,11 +12,26 @@ public class Point {
 	 * @param x
 	 * @param y
 	 */
-	public Point(int x, int y) {
+	public Point(int x, int y, int originalPosition) {
 		this.x = x;
 		this.y = y;
+		this.originalPosition = originalPosition;
 	}
 
+	/**
+	 * @return the originalPosition
+	 */
+	public int getOriginalPosition() {
+		return originalPosition;
+	}
+
+	/**
+	 * @param originalPosition the originalPosition to set
+	 */
+	public void setOriginalPosition(int originalPosition) {
+		this.originalPosition = originalPosition;
+	}
+	
 	/**
 	 * @return the x
 	 */
@@ -46,7 +62,7 @@ public class Point {
 	
 	@Override
 	public String toString() {
-		return ""+x+" "+y;
+		return ""+x+" "+y+ " pos "+originalPosition;
 	}
 	
 }
