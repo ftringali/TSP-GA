@@ -14,8 +14,8 @@ public class GA {
 	
 	//GA PARAMETERS
 	public static final int POPULATION_SIZE = 30000;
-	public static final float CROSSOVER_PERC = 0.6f;
-	public static final float MUTATION_PERC = 0.05f;
+	public static final float CROSSOVER_PERC = 0.5f;
+	public static final float MUTATION_PERC = 0.1f;
 	public static final int GENERATIONS = 500;
 	public static final int RANDOMIZE_COUNTER_MAX = 100;
 	public static final int NEAREST_NEIGHBOURS_LIST_LENGTH = 10;
